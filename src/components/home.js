@@ -1,12 +1,18 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
+  const ButtonLink = ({ to, children }) => {
+    return (
+      <Link to={to}>
+        <Button>{children}</Button>
+      </Link>
+    );
+  };
   return (
     <div>
       <Card sx={{ minWidth: 275, maxWidth: 600, margin: "auto" }}>
@@ -16,12 +22,13 @@ export const Home = () => {
           </Typography>
 
           <p>
-            Welcome to the official, Lost in the Woods text adventure! You can
+            Welcome to the official Lost in the Woods text adventure! You can
             have all the fun of being lost in the woods without actually having
-            to be in the woods! If you're careful, you might not even get mauled
+            to be in the woods! If you're careful, you might even not get mauled
             by bears!
           </p>
-          <Button>Play</Button>
+
+          <ButtonLink to="/Story">Play</ButtonLink>
         </CardContent>
       </Card>
     </div>

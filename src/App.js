@@ -1,8 +1,11 @@
 import "./App.css";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./components/Home";
 import { Other } from "./components/Other";
+import { Story } from "./components/Story";
 
 function App() {
   return (
@@ -11,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="Other" element={<Other />} />
+        <Route path="Story" element={<Story />} />
       </Routes>
     </>
   );
