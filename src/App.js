@@ -1,6 +1,4 @@
 import "./App.css";
-import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import { Home } from "./components/Home";

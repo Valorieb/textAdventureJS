@@ -1,17 +1,13 @@
-import { Card } from "@mui/material";
+import { Button } from "@mui/material";
 
-export const choice = ({ text, onChoiceSelected }) => {
-  const handleChoiceClick = () => {
-    // Handle the player's choice by invoking the callback provided in the props.
-    onChoiceSelected(text);
-  };
-
+export const Choice = ({ text, onChoiceSelect, nextStep }) => {
   return (
-    <Card>
-      <div>
-        <p>{text}</p>
-        <button onClick={handleChoiceClick}>Choose</button>
-      </div>
-    </Card>
+    <Button
+      sx={{ padding: "10px", margin: "20px" }}
+      variant="contained"
+      onClick={() => onChoiceSelect(nextStep)}
+    >
+      {text}
+    </Button>
   );
 };
