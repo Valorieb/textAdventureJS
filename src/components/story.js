@@ -188,11 +188,10 @@ export const Story = () => {
     },
     {
       storyStep: 18,
-      text: `A gust of
-    wind swoops through the tree's barren branches causing it to creak and groan like
-    an unoiled hinge. There is a pile of dead, dry wood surrounding the tree where its
-    branches fell. Above, you see in its lifeless bower, somewhat detached
-    branches readying to plummit to the earth.`,
+      text: `A gust of wind swoops through the tree's barren branches causing it 
+      to creak and groan like an unoiled hinge. There is a pile of dead, 
+      dry wood surrounding the tree where its branches fell. Above, you see in its 
+      lifeless bower, somewhat detached branches readying to plummit to the earth.`,
       choices: [
         { text: "Geat bearings", nextStep: 20 },
         { text: "Kick Tree", nextStep: 21 },
@@ -200,8 +199,25 @@ export const Story = () => {
         { text: "Gather branches", nextStep: 23 },
       ],
     },
-    { storyStep: 19, text: ``, choices: [] },
-    { storyStep: 20, text: ``, choices: [] },
+    {
+      storyStep: 19,
+      text: `To the northeast is a large, gnarled tree.
+    to the east is a moss covered log.`,
+      choices: [
+        { text: "explore gnarled tree", nextStep: 24 },
+        { text: "examine mossy log", nextStep: 25 },
+      ],
+    },
+    {
+      storyStep: 20,
+      text: `To the northwest is a rushing river. 
+    To the south are some brambles. To the west is a downward sloping hill.`,
+      choices: [
+        { text: "River", nextStep: 26 },
+        { text: "Brambles", nextStep: 4 },
+        { text: "Downhill", nextStep: 27 },
+      ],
+    },
     { storyStep: 21, text: ``, choices: [] },
     { storyStep: 22, text: ``, choices: [] },
     { storyStep: 23, text: ``, choices: [] },
@@ -218,6 +234,38 @@ export const Story = () => {
     { storyStep: 34, text: ``, choices: [] },
     { storyStep: 35, text: ``, choices: [] },
     { storyStep: 36, text: ``, choices: [] },
+    { storyStep: 37, text: ``, choices: [] },
+    { storyStep: 38, text: ``, choices: [] },
+    { storyStep: 39, text: ``, choices: [] },
+    { storyStep: 40, text: ``, choices: [] },
+    { storyStep: 41, text: ``, choices: [] },
+    { storyStep: 42, text: ``, choices: [] },
+    { storyStep: 43, text: ``, choices: [] },
+    { storyStep: 44, text: ``, choices: [] },
+    { storyStep: 45, text: ``, choices: [] },
+    { storyStep: 46, text: ``, choices: [] },
+    { storyStep: 47, text: ``, choices: [] },
+    { storyStep: 48, text: ``, choices: [] },
+    { storyStep: 49, text: ``, choices: [] },
+    { storyStep: 50, text: ``, choices: [] },
+    { storyStep: 51, text: ``, choices: [] },
+    { storyStep: 52, text: ``, choices: [] },
+    { storyStep: 53, text: ``, choices: [] },
+    { storyStep: 54, text: ``, choices: [] },
+    { storyStep: 55, text: ``, choices: [] },
+    { storyStep: 56, text: ``, choices: [] },
+    { storyStep: 57, text: ``, choices: [] },
+    { storyStep: 58, text: ``, choices: [] },
+    { storyStep: 59, text: ``, choices: [] },
+    { storyStep: 60, text: ``, choices: [] },
+    { storyStep: 61, text: ``, choices: [] },
+    { storyStep: 62, text: ``, choices: [] },
+    { storyStep: 63, text: ``, choices: [] },
+    { storyStep: 64, text: ``, choices: [] },
+    { storyStep: 65, text: ``, choices: [] },
+    { storyStep: 66, text: ``, choices: [] },
+    { storyStep: 67, text: ``, choices: [] },
+    { storyStep: 68, text: ``, choices: [] },
   ];
   const currentStep = storyContent[storyStep];
 
