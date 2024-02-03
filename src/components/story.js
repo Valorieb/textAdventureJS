@@ -11,7 +11,7 @@ export const Story = () => {
       The world around you is a blur. Slowly, though, it comes into focus. 
       You are lying on your back. Foliage rises endlesssly toward the sky. 
       At least, you assume there is sky. You can't see much sky beyond the 
-      dense cover of the leaves. Your head aches. You can't remember how you 
+      dense cover of leaves. Your head aches. You can't remember how you 
       got here on the forest floor.`,
       choices: [
         { text: `Try to remember`, nextStep: 1 },
@@ -80,13 +80,14 @@ export const Story = () => {
       storyStep: 7,
       text: `Careful of the thorns, you grab handfulls of berries and stuff your face.
     You hadn't even realized how hungry you were. The sweet juice drips through your fingers
-    and down the corners of your mouth staining your skin purple. You
+    and down the corners of your mouth. You
     have never tasted more delicious blackberries.`,
       choices: [{ text: `Get bearings`, nextStep: 8 }],
     },
     {
       storyStep: 8,
-      text: `To the west is the patch of forest where you first awakened. A large, decaying tree looms to the North. To the South are large, gray, boulders.`,
+      text: `To the west is the patch of forest where you first awakened. 
+      A large, decaying tree looms to the North. To the South are large, gray, boulders.`,
       choices: [
         { text: `return to where you began`, nextStep: 12 },
         { text: `Head toward the dead tree`, nextStep: 13 },
@@ -145,8 +146,8 @@ export const Story = () => {
       choices: [
         { text: "Examine Tree", nextStep: 18 },
         { text: "Get bearings.", nextStep: 19 },
-        { text: "Kick Tree", nextStep: 20 },
-        { text: "Poke termintes with stick", nextStep: 21 },
+        { text: "Kick Tree", nextStep: 21 },
+        { text: "Poke termintes with stick", nextStep: 22 },
       ],
     },
     {
@@ -154,20 +155,20 @@ export const Story = () => {
       text: `Large boulders lie at the base of a cliff. Some of them are as tall
       as you are.`,
       choices: [
-        { text: "Try to climb", nextStep: 22 },
-        { text: "Pick up rocks...just in case", nextStep: 23 },
-        { text: "get bearings", nextStep: 24 },
+        { text: "Try to climb", nextStep: 26 },
+        { text: "Pick up rocks...just in case", nextStep: 28 },
+        { text: "get bearings", nextStep: 25 },
       ],
     },
     {
       storyStep: 15,
       text: `In front of you is the largest tree. You have seen.
     In your life. You estimate five people would need to wrap their arms around its
-    trunk to be able to touch fingers. Its twisted roots sprawl in a massive knot at
+    trunk to form a complete circle. Its ancient, twisted roots sprawl in a massive knot at
     your feet.`,
       choices: [
-        { text: "examine tree", nextStep: 25 },
-        { text: "get bearings", nextStep: 26 },
+        { text: "examine tree", nextStep: 24 },
+        { text: "get bearings", nextStep: 25 },
       ],
     },
     {
@@ -176,14 +177,14 @@ export const Story = () => {
     not be your first choice for a weekend rock-climbing retreat. One wrong step and you
     could be impaled by a sharp rock.`,
       choices: [
-        { text: "Go Back", nextStep: 27 },
-        { text: "Pick up rocks", nextStep: 28 },
+        { text: "Go Back", nextStep: 11 },
+        { text: "Pick up rocks", nextStep: 27 },
       ],
     },
     {
       storyStep: 17,
       text: `Not much to see here. This part of the mountainside consists
-    of a sheer, vertical wall. No way you could climb that.`,
+    of a sheer, vertical wall towering toward the sky. No way you could climb that.`,
       choices: [{ text: "get bearings", nextStep: 19 }],
     },
     {
@@ -193,7 +194,7 @@ export const Story = () => {
       dry wood surrounding the tree where its branches fell. Above, you see in its 
       lifeless bower, somewhat detached branches readying to plummit to the earth.`,
       choices: [
-        { text: "Geat bearings", nextStep: 20 },
+        { text: "Get bearings", nextStep: 20 },
         { text: "Kick Tree", nextStep: 21 },
         { text: "Poke termintes with stick", nextStep: 22 },
         { text: "Gather branches", nextStep: 23 },
@@ -204,8 +205,8 @@ export const Story = () => {
       text: `To the northeast is a large, gnarled tree.
     to the east is a moss covered log.`,
       choices: [
-        { text: "explore gnarled tree", nextStep: 24 },
-        { text: "examine mossy log", nextStep: 25 },
+        { text: "explore gnarled tree", nextStep: 15 },
+        { text: "examine mossy log", nextStep: 6 },
       ],
     },
     {
@@ -218,14 +219,63 @@ export const Story = () => {
         { text: "Downhill", nextStep: 27 },
       ],
     },
-    { storyStep: 21, text: ``, choices: [] },
-    { storyStep: 22, text: ``, choices: [] },
-    { storyStep: 23, text: ``, choices: [] },
-    { storyStep: 24, text: ``, choices: [] },
+    {
+      storyStep: 21,
+      text: `Channeling your inner Jackie Chan, you swing your foot
+    and kick the dead tree as hard as you can. The branches rattle from the blow.
+    You stand proud, admiring your ninja skills, when you hear something snap.
+    A dead branch was shaken loose from your kick. It tumbles down and conks you
+    squarely on the head. Good work Jackie Chan.`,
+      choices: [
+        { text: "get bearings", nextStep: 19 },
+        { text: "examine tree", nextStep: 13 },
+      ],
+    },
+    {
+      storyStep: 22,
+      text: `You pick up one of the dead branches and poke the
+    swarth of termites crawling up and down the dead trunk. They seem nonplussed. Were
+    you hoping for something dramatic?`,
+      choices: [
+        { text: "get bearings", nextStep: 19 },
+        { text: "examine tree", nextStep: 13 },
+      ],
+    },
+    {
+      storyStep: 23,
+      text: `These dead, dry branches will be perfect for kindling.
+    You gather some into a bundle and tuck it under your arm.`,
+      choices: [
+        { text: "get bearings", nextStep: 19 },
+        { text: "examine tree", nextStep: 13 },
+      ],
+    },
+    {
+      storyStep: 24,
+      text: `Upon closer examination, you see a hollow in the gnarled tree trunk.
+    Inside the hollow is a large feather.`,
+      choices: [{ text: "get bearings", nextStep: 25 }],
+    },
     { storyStep: 25, text: ``, choices: [] },
-    { storyStep: 26, text: ``, choices: [] },
-    { storyStep: 27, text: ``, choices: [] },
-    { storyStep: 28, text: ``, choices: [] },
+    {
+      storyStep: 26,
+      text: `You climb on top of one of the medium size boulders.
+    "I'm king of the mountain!" You shout...now what?`,
+      choices: [{ text: "get bearings", nextStep: 24 }],
+    },
+    {
+      storyStep: 27,
+      text: `You pick up a couple of sharp rocks. Maybe you could make a spear out of these?
+      ...wait, how do you make a spear?`,
+      choices: [{ text: "Go Back", nextStep: 11 }],
+    },
+    {
+      storyStep: 28,
+      text: `You gather some medium size rocks and begin stuffing them
+      in your pockets. You're sure these rocks will come in hand sooner or
+      later...right?`,
+      choices: [],
+    },
     { storyStep: 29, text: ``, choices: [] },
     { storyStep: 30, text: ``, choices: [] },
     { storyStep: 31, text: ``, choices: [] },
