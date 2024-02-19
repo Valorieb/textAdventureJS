@@ -192,7 +192,7 @@ export const Story = () => {
       text: `A gust of wind swoops through the tree's barren branches causing it 
       to creak and groan like an unoiled hinge. There is a pile of dead, 
       dry wood surrounding the tree where its branches fell. Above, you see in its 
-      lifeless bower, somewhat detached branches readying to plummit to the earth.`,
+      lifeless bower detached branches readying to plummit to the earth.`,
       choices: [
         { text: "Get bearings", nextStep: 20 },
         { text: "Kick Tree", nextStep: 21 },
@@ -214,7 +214,7 @@ export const Story = () => {
       text: `To the northwest is a rushing river. 
     To the south are some brambles. To the west is a downward sloping hill.`,
       choices: [
-        { text: "River", nextStep: 26 },
+        { text: "River", nextStep: 25 },
         { text: "Brambles", nextStep: 4 },
         { text: "Downhill", nextStep: 27 },
       ],
@@ -256,12 +256,25 @@ export const Story = () => {
     Inside the hollow is a large feather.`,
       choices: [{ text: "get bearings", nextStep: 25 }],
     },
-    { storyStep: 25, text: ``, choices: [] },
+    {
+      storyStep: 25,
+      text: `You see a wide, rushing river with white rapids swirrling around 
+      rocks of sundry shapes and sizes. 
+      The sound of the rapids is so loud you can't imagine carrying out a 
+      serious conversation here...If there were anyone around, that is.
+    `,
+      choices: [
+        { text: "Get bearings", nextStep: 29 },
+        { text: "Swim across", nextStep: 30 },
+        { text: "Throw stick in", nextStep: 31 },
+        { text: "Rock hop to the other side", nextStep: 32 },
+      ],
+    },
     {
       storyStep: 26,
       text: `You climb on top of one of the medium size boulders.
     "I'm king of the mountain!" You shout...now what?`,
-      choices: [{ text: "get bearings", nextStep: 24 }],
+      choices: [{ text: "get bearings", nextStep: 30 }],
     },
     {
       storyStep: 27,
@@ -276,10 +289,52 @@ export const Story = () => {
       later...right?`,
       choices: [],
     },
-    { storyStep: 29, text: ``, choices: [] },
-    { storyStep: 30, text: ``, choices: [] },
-    { storyStep: 31, text: ``, choices: [] },
-    { storyStep: 32, text: ``, choices: [] },
+    {
+      storyStep: 29,
+      text: `Beyond the river, you see more foliage. It is far too dense to make out anything else in much detail.
+      To the Southeast is a large, barren tree.`,
+      choices: [
+        { text: "Swim across", nextStep: 30 },
+        { text: "Throw stick in", nextStep: 31 },
+        { text: "Rock hop to the other side", nextStep: 32 },
+        { text: "Turn back toward barren tree", nextStep: 18 },
+      ],
+    },
+    {
+      storyStep: 30,
+      text: `You're about to jump into the river feet first. 
+    But something tells you jumping into an uncontrollably fast river with 
+    jutting rocks might not be a good idea and you think better of it.`,
+      choices: [
+        { text: "Get bearings", nextStep: 29 },
+        { text: "Throw stick in", nextStep: 31 },
+        { text: "Rock hop to the other side", nextStep: 32 },
+      ],
+    },
+    {
+      storyStep: 31,
+      text: `You find a large branch and hurl it into the river like a javalin.
+    The branch is swept under the current, bobbing swiftly downstream. 
+    Ultimately,it smashes into a rock and snaps in two. The pieces careen, flipping and flailing, out of sight.`,
+      choices: [
+        { text: "Get bearings", nextStep: 29 },
+        { text: "Swim across", nextStep: 30 },
+        { text: "Rock hop to the other side", nextStep: 32 },
+      ],
+    },
+    {
+      storyStep: 32,
+      text: `Determined that whatever is on the other side of this river, 
+    that's where you need to be, you bend your knees and swing your arms back readying to
+     leap to the nearest stone.You're just about to propel yourself forward, 
+     when you slip on a wet rock and land flat on your bottom
+    Maybe hopping across the rushing river on slippery, wet rocks is not the best idea.`,
+      choices: [
+        { text: "Get bearings", nextStep: 29 },
+        { text: "Swim across", nextStep: 30 },
+        { text: "Throw stick in", nextStep: 31 },
+      ],
+    },
     { storyStep: 33, text: ``, choices: [] },
     { storyStep: 34, text: ``, choices: [] },
     { storyStep: 35, text: ``, choices: [] },
