@@ -145,7 +145,7 @@ export const Story = () => {
       crawling all over it, hard at work.`,
       choices: [
         { text: "Examine Tree", nextStep: 18 },
-        { text: "Get bearings.", nextStep: 19 },
+        { text: "Get bearings.", nextStep: 20 },
         { text: "Kick Tree", nextStep: 21 },
         { text: "Poke termintes with stick", nextStep: 22 },
       ],
@@ -157,7 +157,7 @@ export const Story = () => {
       choices: [
         { text: "Try to climb", nextStep: 26 },
         { text: "Pick up rocks...just in case", nextStep: 28 },
-        { text: "get bearings", nextStep: 25 },
+        { text: "get bearings", nextStep: 35 },
       ],
     },
     {
@@ -168,7 +168,7 @@ export const Story = () => {
     your feet.`,
       choices: [
         { text: "examine tree", nextStep: 24 },
-        { text: "get bearings", nextStep: 25 },
+        { text: "get bearings", nextStep: 33 },
       ],
     },
     {
@@ -211,12 +211,11 @@ export const Story = () => {
     },
     {
       storyStep: 20,
-      text: `To the northwest is a rushing river. 
-    To the south are some brambles. To the west is a downward sloping hill.`,
+      text: `To the south are some brambles. To the west is a downward sloping hill.`,
       choices: [
-        { text: "River", nextStep: 25 },
         { text: "Brambles", nextStep: 4 },
-        { text: "Downhill", nextStep: 27 },
+        { text: "Downhill", nextStep: 34 },
+        { text: "Examine dead tree", nextStep: 13 },
       ],
     },
     {
@@ -227,7 +226,7 @@ export const Story = () => {
     A dead branch was shaken loose from your kick. It tumbles down and conks you
     squarely on the head. Good work Jackie Chan.`,
       choices: [
-        { text: "get bearings", nextStep: 19 },
+        { text: "get bearings", nextStep: 20 },
         { text: "examine tree", nextStep: 13 },
       ],
     },
@@ -237,7 +236,7 @@ export const Story = () => {
     swarth of termites crawling up and down the dead trunk. They seem nonplussed. Were
     you hoping for something dramatic?`,
       choices: [
-        { text: "get bearings", nextStep: 19 },
+        { text: "get bearings", nextStep: 20 },
         { text: "examine tree", nextStep: 13 },
       ],
     },
@@ -246,7 +245,7 @@ export const Story = () => {
       text: `These dead, dry branches will be perfect for kindling.
     You gather some into a bundle and tuck it under your arm.`,
       choices: [
-        { text: "get bearings", nextStep: 19 },
+        { text: "get bearings", nextStep: 20 },
         { text: "examine tree", nextStep: 13 },
       ],
     },
@@ -254,7 +253,7 @@ export const Story = () => {
       storyStep: 24,
       text: `Upon closer examination, you see a hollow in the gnarled tree trunk.
     Inside the hollow is a large feather.`,
-      choices: [{ text: "get bearings", nextStep: 25 }],
+      choices: [{ text: "get bearings", nextStep: 33 }],
     },
     {
       storyStep: 25,
@@ -274,7 +273,7 @@ export const Story = () => {
       storyStep: 26,
       text: `You climb on top of one of the medium size boulders.
     "I'm king of the mountain!" You shout...now what?`,
-      choices: [{ text: "get bearings", nextStep: 30 }],
+      choices: [{ text: "get bearings", nextStep: 35 }],
     },
     {
       storyStep: 27,
@@ -297,7 +296,7 @@ export const Story = () => {
         { text: "Swim across", nextStep: 30 },
         { text: "Throw stick in", nextStep: 31 },
         { text: "Rock hop to the other side", nextStep: 32 },
-        { text: "Turn back toward barren tree", nextStep: 18 },
+        { text: "Turn back toward the gnarled tree", nextStep: 15 },
       ],
     },
     {
@@ -335,9 +334,25 @@ export const Story = () => {
         { text: "Throw stick in", nextStep: 31 },
       ],
     },
-    { storyStep: 33, text: ``, choices: [] },
-    { storyStep: 34, text: ``, choices: [] },
-    { storyStep: 35, text: ``, choices: [] },
+    {
+      storyStep: 33,
+      text: `To the north is a rushing river. A mossy log lies to your south.
+    To the east, a gentle slope where you see your backpack and its contents 
+    sprawled along the forset floor.`,
+      choices: [
+        { text: "Examine rushing river", nextStep: 25 },
+        { text: `Go south toward the log`, nextStep: 6 },
+        { text: `Go east`, nextStep: 34 },
+      ],
+    },
+    {
+      storyStep: 34,
+      text: `Upon reaching the bottom of the hill, you see your backpack.
+    It looks like it took a good tumble down the hill.
+    It seems to have ripped at the seams, spewing its contents down the hillside.`,
+      choices: [],
+    },
+    { storyStep: 35, text: `Boulders`, choices: [] },
     { storyStep: 36, text: ``, choices: [] },
     { storyStep: 37, text: ``, choices: [] },
     { storyStep: 38, text: ``, choices: [] },
