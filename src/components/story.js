@@ -115,7 +115,7 @@ export const Story = () => {
     of jagged rocks.`,
       choices: [
         { text: `Explore the gnarled tree`, nextStep: 15 },
-        { text: `Go back`, nextStep: 12 },
+        { text: `Go East to the hilltop`, nextStep: 12 },
         { text: `Check out the jagged rocks`, nextStep: 16 },
         { text: `Examine the solid rock wall`, nextStep: 17 },
         { text: `Pick mushrooms`, nextStep: 9 },
@@ -350,11 +350,24 @@ export const Story = () => {
       text: `Upon reaching the bottom of the hill, you see your backpack.
     It looks like it took a good tumble down the hill.
     It seems to have ripped at the seams, spewing its contents down the hillside.`,
+      choices: [
+        { text: "Examine contents", nextStep: 36 },
+        { text: `Get bearings`, nextStep: 37 },
+      ],
+    },
+    { storyStep: 35, text: `Boulders bearings`, choices: [] },
+    {
+      storyStep: 36,
+      text: `A few items of clothing are hanging in the branches of the surrounding
+    shrubbery...including some underware. Well that's embarrassing. 
+    You see your sleeping bag, still strapped to the top of your pack. 
+    A pocket knife, that you probably packed just to look cool, rests at your feet.
+     A dirt crusted book peaks out from some leaves that must have
+     blown over it in the wind.The metal casing of a flashlight 
+     glimmers two feet up the hill, where a rock seems to have broken its fall.`,
       choices: [],
     },
-    { storyStep: 35, text: `Boulders`, choices: [] },
-    { storyStep: 36, text: ``, choices: [] },
-    { storyStep: 37, text: ``, choices: [] },
+    { storyStep: 37, text: `Backpack bearings`, choices: [] },
     { storyStep: 38, text: ``, choices: [] },
     { storyStep: 39, text: ``, choices: [] },
     { storyStep: 40, text: ``, choices: [] },
