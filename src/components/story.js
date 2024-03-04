@@ -359,21 +359,110 @@ export const Story = () => {
     {
       storyStep: 36,
       text: `A few items of clothing are hanging in the branches of the surrounding
-    shrubbery...including some underware. Well that's embarrassing. 
+    shrubbery...including some underwear. Well that's embarrassing. 
     You see your sleeping bag, still strapped to the top of your pack. 
     A pocket knife, that you probably packed just to look cool, rests at your feet.
      A dirt crusted book peaks out from some leaves that must have
      blown over it in the wind.The metal casing of a flashlight 
-     glimmers two feet up the hill, where a rock seems to have broken its fall.`,
-      choices: [],
+     glimmers two feet up the hill, where a rock seems to have broken its fall.
+     
+     What do you wish to examine?`,
+      choices: [
+        { text: "Clothing", nextStep: 38 },
+        { text: "Sleeping bag", nextStep: 39 },
+        { text: "Pocket knife", nextStep: 40 },
+        { text: "Book", nextStep: 41 },
+        { text: "Flashlight", nextStep: 42 },
+        { text: "Backpack", nextStep: 43 },
+        { text: `Get bearings`, nextStep: 37 },
+      ],
     },
-    { storyStep: 37, text: `Backpack bearings`, choices: [] },
-    { storyStep: 38, text: ``, choices: [] },
-    { storyStep: 39, text: ``, choices: [] },
-    { storyStep: 40, text: ``, choices: [] },
-    { storyStep: 41, text: ``, choices: [] },
-    { storyStep: 42, text: ``, choices: [] },
-    { storyStep: 43, text: ``, choices: [] },
+    {
+      storyStep: 37,
+      text: `To the east is a large, gnarled tree. To the west is 
+    a rotting, dead tree. To the north, a steep hill rises. The hill is covered
+    in roots and underbrush.`,
+      choices: [
+        { text: "Examine backpack contents", nextStep: 36 },
+        { text: "Explore the gnarled tree", nextStep: 15 },
+        { text: "Check out the dead tree", nextStep: 13 },
+      ],
+    },
+    {
+      storyStep: 38,
+      text: `You carefully manuveur through the pointy branches of numerous
+    small to medium size shrubs and recover a dirty shirt, 
+    some sweat pants and some smelly underwear.
+    
+    When's the last time you washed these?`,
+      choices: [
+        { text: `Get bearings`, nextStep: 37 },
+        { text: "Examine backpack contents", nextStep: 36 },
+      ],
+    },
+    {
+      storyStep: 39,
+      text: `Despite what was probably your best efforts at rolling
+    your sleeping bag tight and secure, it has come slightly unrolled. It is covered in dirt.
+    Yet it somehow remains haphazardly attached to your pack.
+    There also seems to be some bird poop on it. Great. You pick up your sleeping bag
+    and shake it off.`,
+      choices: [
+        { text: `Get bearings`, nextStep: 37 },
+        { text: "Examine more backpack contents", nextStep: 36 },
+      ],
+    },
+    {
+      storyStep: 40,
+      text: `You know you only packed it because you wanted to look cool...
+    but who knows? Maybe this pocket knife will actually come in handy. 
+    You blow the dirt off of it and stick it in your pocket.`,
+      choices: [
+        { text: `Get bearings`, nextStep: 37 },
+        { text: "Examine more backpack contents", nextStep: 36 },
+      ],
+    },
+    {
+      storyStep: 41,
+      text: `You stoop over and brush the leaves off of the book.
+      In spite of your deepest wishes for it to be a "How to Survive When
+      Lost in the Woods" book, it seems to be a library book about a future robot
+      apocalypse. Well, at least you have good taste. 
+      
+      You see a photograph nearby that must have fallen out from between it's pages. 
+      It's a photo of youreslf and another person. A girl with brown hair. 
+      
+      As you look at the photograph, you remember that this person was with you 
+      before you hit your head...but you can't remember her name. You think it
+      might have started with an A...Alice? Andrea? Something like that.`,
+      choices: [
+        { text: `Get bearings`, nextStep: 37 },
+        { text: "Examine more backpack contents", nextStep: 36 },
+      ],
+    },
+    {
+      storyStep: 42,
+      text: `You retrieve what was once your flashlight. 
+    It has a large crack where the casing split in two and the batteries seem to be
+    nowhere in sight. Doesn't look like you'll be getting much use out of this now.
+    `,
+      choices: [
+        { text: `Get bearings`, nextStep: 37 },
+        { text: "Examine more backpack contents", nextStep: 36 },
+      ],
+    },
+    {
+      storyStep: 43,
+      text: `Your backpack has split open, rendering it useless. But
+    you still might be able to find something else inside of it.
+    You go through the pockets trying to find anything else you might use. You
+    find a few granola bars, insect repellent, SPF 50 sunscreen, a half empty waterbottle, and a first aid kit that looks like it was thrown
+  in a ziplock bag at the last minute.`,
+      choices: [
+        { text: `Get bearings`, nextStep: 37 },
+        { text: "Examine more backpack contents", nextStep: 36 },
+      ],
+    },
     { storyStep: 44, text: ``, choices: [] },
     { storyStep: 45, text: ``, choices: [] },
     { storyStep: 46, text: ``, choices: [] },
