@@ -58,14 +58,22 @@ export const Story = () => {
         { text: `Get bearings`, nextStep: 8 },
       ],
     },
+
     {
       storyStep: 5,
       text: `Heading south, you find yourself among beautiful, white,
     birch trees. The ground is much more even under your feet here. 
-    Ahead of you, a mountain juts to the sky. Through the birchtrees, you
-    see the gaping mouth of a cave.`,
-      choices: [],
+    Ahead of you, to the South, a mountain rises resolutely to the sky. Through the birchtrees, you
+    see the gaping mouth of a cave. To the east, are some large boulders.
+    To the west, jagged rocks peak out from behind the birch trees.`,
+      choices: [
+        { text: `Explore the cave entrance`, nextStep: 44 },
+        { text: `Examine the large boulders`, nextStep: 14 },
+        { text: `Go to the jagged rocks`, nextStep: 16 },
+        { text: `Head north`, nextStep: 12 },
+      ],
     },
+
     {
       storyStep: 6,
       text: `A large, hollow log lies on its side. It is covered in moss
@@ -403,8 +411,8 @@ export const Story = () => {
     {
       storyStep: 39,
       text: `Despite what was probably your best efforts at rolling
-    your sleeping bag tight and secure, it has come slightly unrolled. It is covered in dirt.
-    Yet it somehow remains haphazardly attached to your pack.
+    your sleeping bag tight and secure, it has come slightly unrolled. It is covered in dirt,
+    yet somehow remains haphazardly attached to your pack.
     There also seems to be some bird poop on it. Great. You pick up your sleeping bag
     and shake it off.`,
       choices: [
@@ -463,16 +471,118 @@ export const Story = () => {
         { text: "Examine more backpack contents", nextStep: 36 },
       ],
     },
-    { storyStep: 44, text: ``, choices: [] },
-    { storyStep: 45, text: ``, choices: [] },
-    { storyStep: 46, text: ``, choices: [] },
-    { storyStep: 47, text: ``, choices: [] },
-    { storyStep: 48, text: ``, choices: [] },
-    { storyStep: 49, text: ``, choices: [] },
-    { storyStep: 50, text: ``, choices: [] },
-    { storyStep: 51, text: ``, choices: [] },
-    { storyStep: 52, text: ``, choices: [] },
-    { storyStep: 53, text: ``, choices: [] },
+    {
+      storyStep: 44,
+      text: `You enter the maw of a vast, dark cave. If nothing else,
+    this could keep you sheltered from the rain. Looking around, you see a crevace toward
+    the back of the cave you think you could just squeeze through. What do you do?`,
+      choices: [
+        {
+          text: `Try to start a fire in the shelter of the cave`,
+          nextStep: 45,
+        },
+        { text: "Go North toward the birch trees", nextStep: 5 },
+        { text: `See what's on the other side of the crevace`, nextStep: 46 },
+      ],
+    },
+    {
+      storyStep: 45,
+      text: `You build a small tipi of sticks 
+    with dry kindling you gathered from the 
+    forest floor.`,
+      choices: [],
+    },
+    {
+      storyStep: 46,
+      text: `Squeezing through the crevace, you
+    come to a dark, wide opening. Stalactites and stalagmites protrude 
+    like claws from the ground and the roof of the cave.
+    There is a crude well to the east, beyond which the cave seems to narrow into 
+    a small corridor. To the south, there is a steep slope upward.`,
+      choices: [
+        {
+          text: `Examine the well`,
+          nextStep: 47,
+        },
+        { text: "Explore the corridor", nextStep: 48 },
+        { text: `Go north towards the mouth of the cave`, nextStep: 44 },
+        { text: `Go south towards the rising slope`, nextStep: 49 },
+      ],
+    },
+    {
+      storyStep: 47,
+      text: `A crude circle of stones are stacked around a deep, dark, hole.
+    A few broken pitchers of clay lie at its base
+    There is a rope tied to a nearby stalactite at one end that descends down
+    the well at the other. `,
+      choices: [
+        {
+          text: `Throw a rock down the well`,
+          nextStep: 50,
+        },
+        { text: "Climb down the well", nextStep: 51 },
+        {
+          text: "Forget this well. Explore the rest of the cave",
+          nextStep: 46,
+        },
+      ],
+    },
+    {
+      storyStep: 48,
+      text: `A natural corridor seems to be carved through the rock to the East.
+    As you make your way further down the corridor, you hear the sound of rushing water.
+    After a few minutes of walking, the corridor opens to a vast chamber. Before you is
+    an underground lake with a roaring waterfall pouring from somewhere far up above.`,
+      choices: [],
+    },
+    {
+      storyStep: 49,
+      text: `The slope is steep, but not so steep you can't climb it.
+    It's just rocky enough for you to get a good foothold. When you reach the top,
+    you can't believe your eyes. The walls and floor are covered in shimmering, blue
+    crystals that seem to glow in the darkness.`,
+      choices: [],
+    },
+    {
+      storyStep: 50,
+      text: `You throw a rock down the well...After a minute or two you hear
+    the faint echo of stone hitting stone.`,
+      choices: [],
+    },
+    {
+      storyStep: 51,
+      text: `That rope looks secure enough. What could go wrong?
+    Clinging to the rope, you carefully descend the well.
+    Miraculously, you reach the bottom without injury.You gasp.
+    In the dim light, you can barely make out what seems to be a human skeleton in 
+    a heap on the ground.`,
+      choices: [
+        { text: "Run awaaay!!!", nextStep: 47 },
+        {
+          text: "Examine skeleton",
+          nextStep: 52,
+        },
+      ],
+    },
+    {
+      storyStep: 52,
+      text: `You've never seen a human skull before.
+    You stare gapemouthed at it for a while then give it a small kick.
+    Something glints from beneath the bones...`,
+      choices: [
+        { text: "Run awaaay!!!", nextStep: 47 },
+        {
+          text: "Examine glint",
+          nextStep: 53,
+        },
+      ],
+    },
+    {
+      storyStep: 53,
+      text: `Nestled within the eye of the skull is an old, rusted key.
+    You take the key and place it in your pocket.`,
+      choices: [{ text: "Run awaaay!!!", nextStep: 47 }],
+    },
     { storyStep: 54, text: ``, choices: [] },
     { storyStep: 55, text: ``, choices: [] },
     { storyStep: 56, text: ``, choices: [] },
