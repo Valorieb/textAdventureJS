@@ -532,8 +532,15 @@ export const Story = () => {
       text: `A natural corridor seems to be carved through the rock to the East.
     As you make your way further down the corridor, you hear the sound of rushing water.
     After a few minutes of walking, the corridor opens to a vast chamber. Before you is
-    an underground lake with a roaring waterfall pouring from somewhere far up above.`,
-      choices: [],
+    an underground lake with a roaring waterfall pouring from somewhere far up above.
+    A path from where you stand curves around behind the waterfall.`,
+      choices: [
+        {
+          text: `Swim in the lake`,
+          nextStep: 55,
+        },
+        { text: "Follow the path behind the waterfall", nextStep: 56 },
+      ],
     },
     {
       storyStep: 49,
@@ -541,13 +548,19 @@ export const Story = () => {
     It's just rocky enough for you to get a good foothold. When you reach the top,
     you can't believe your eyes. The walls and floor are covered in shimmering, blue
     crystals that seem to glow in the darkness.`,
-      choices: [],
+      choices: [
+        {
+          text: `Pocket a shard of crystal`,
+          nextStep: 54,
+        },
+        { text: "Turn around and climb back down the slope", nextStep: 46 },
+      ],
     },
     {
       storyStep: 50,
       text: `You throw a rock down the well...After a minute or two you hear
     the faint echo of stone hitting stone.`,
-      choices: [],
+      choices: [{ text: "Examine well", nextStep: 47 }],
     },
     {
       storyStep: 51,
@@ -583,13 +596,108 @@ export const Story = () => {
     You take the key and place it in your pocket.`,
       choices: [{ text: "Run awaaay!!!", nextStep: 47 }],
     },
-    { storyStep: 54, text: ``, choices: [] },
-    { storyStep: 55, text: ``, choices: [] },
-    { storyStep: 56, text: ``, choices: [] },
-    { storyStep: 57, text: ``, choices: [] },
-    { storyStep: 58, text: ``, choices: [] },
-    { storyStep: 59, text: ``, choices: [] },
-    { storyStep: 60, text: ``, choices: [] },
+    {
+      storyStep: 54,
+      text: `You slip a good sized crystal in your pocket. 
+      You wonder if it's worth anything.`,
+      choices: [{ text: "Turn back", nextStep: 46 }],
+    },
+    {
+      storyStep: 55,
+      text: `You step into the cool water of 
+    the underground lake. You feel refreshed as the sweat and dirt
+    wash off of you. As you kick your feet, splashing about the lake, you 
+    stub your toe on something hard."Ouch!" you cry. That didn't feel like a rock`,
+      choices: [
+        {
+          text: "Dive under water and try to see what you stubbed your toe on",
+          nextStep: 60,
+        },
+        {
+          text: "This lake isn't safe, get out while you still can!",
+          nextStep: 48,
+        },
+      ],
+    },
+
+    {
+      storyStep: 56,
+      text: `You follow a path that curves behind the waterfall.
+      As you approach the waterfall, you feel the spray of water mysting your skin. From here, 
+      you can reach out and touch the waterfall.
+       You feel the cool rush of water splashing through your fingers.
+       But that's not all you see.
+      To your surprise, the waterfall had concealed a hinged, metal door.`,
+      choices: [
+        {
+          text: `Turn back`,
+          nextStep: 47,
+        },
+        {
+          text: `Enter the metal doorway`,
+          nextStep: 57,
+        },
+      ],
+    },
+
+    {
+      storyStep: 57,
+      text: `You push the rusty, metal door open and
+    see a  long path, gently sloping upward. Light is pouring from above.`,
+      choices: [
+        {
+          text: `Go down toward the underground lake`,
+          nextStep: 54,
+        },
+        {
+          text: `Ascend the path behind the metal door.`,
+          nextStep: 58,
+        },
+      ],
+    },
+    {
+      storyStep: 58,
+      text: `As you near the end of the hallway, you 
+    hear birds chirping and feel a gentle breeze. You have found an exit from
+    the cave! As you step into the sunlight, you realize that it is nearly dusk.
+    Ahead, through the trees, you see what appears to be the gentle glow of a fire.
+    You hear some distant voices.`,
+      choices: [
+        {
+          text: `Go back down toward the metal door`,
+          nextStep: 57,
+        },
+        {
+          text: `Approach the fire.`,
+          nextStep: 59,
+        },
+      ],
+    },
+    {
+      storyStep: 59,
+      text: `As you approach the fire, you are relieved
+    to see people. Real, live human beings! At first they don't see you.
+    Then a girl with brown hair suddenly turns in your direction. "There you are!"
+    She says, "We've been looking all over for you!" Everyone turns to look and you are
+    met with many such enthusiastic greetings.
+
+    It's all coming back to you. You were hiking together as a group when
+    you saw a majestic red fox. You couldn't miss this photo opportunity. You followed
+    the fox from a distance, trying not to startle it.
+
+    As you were rifeling through your bag to find your camera, the fox bolted.
+   You tried clumsily to run after it while rummaging through your bag.
+    You tripped on a root and your backpack went flying. 
+   
+    Faces, names, it all comes back. You're so happy to finally be safe
+    and sound with friends!
+    
+    The End
+    
+    `,
+      choices: [],
+    },
+    { storyStep: 60, text: `Dive under water`, choices: [] },
     { storyStep: 61, text: ``, choices: [] },
     { storyStep: 62, text: ``, choices: [] },
     { storyStep: 63, text: ``, choices: [] },
