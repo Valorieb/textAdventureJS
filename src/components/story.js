@@ -685,7 +685,7 @@ export const Story = () => {
     you saw a majestic red fox. You couldn't miss this photo opportunity. You followed
     the fox from a distance, trying not to startle it.
 
-    As you were rifeling through your bag to find your camera, the fox bolted.
+    As you were rifling through your bag to find your camera, the fox bolted.
    You tried clumsily to run after it while rummaging through your bag.
     You tripped on a root and your backpack went flying. 
    
@@ -697,11 +697,56 @@ export const Story = () => {
     `,
       choices: [],
     },
-    { storyStep: 60, text: `Dive under water`, choices: [] },
-    { storyStep: 61, text: ``, choices: [] },
-    { storyStep: 62, text: ``, choices: [] },
-    { storyStep: 63, text: ``, choices: [] },
-    { storyStep: 64, text: ``, choices: [] },
+    {
+      storyStep: 60,
+      text: `You take a big breath and dive under the water.
+    As your eyes adjust to opening under water, you are able to see a rusted treasure
+    chest partially burried in the silt beneath you.`,
+      choices: [
+        {
+          text: `Leave the chest where it is. It's probably booby trapped!`,
+          nextStep: 61,
+        },
+        {
+          text: `Try to lift the chest out of the water.`,
+          nextStep: 62,
+        },
+      ],
+    },
+    {
+      storyStep: 61,
+      text: `You swim away in a panic. Ain't nobody got time for that bad mojo!`,
+      choices: [],
+    },
+    {
+      storyStep: 62,
+      text: `You dive further into the depths of the underground lake.
+    The chest is just light enough for you to lift from the silt. With some effort, you
+    are able to drag it to the surface onto the dry floor of the cave.`,
+      choices: [
+        {
+          text: `It's a trap! Don't touch it!`,
+          nextStep: 63,
+        },
+        {
+          text: `Open the chest and find out what's inside!`,
+          nextStep: 59,
+        },
+      ],
+    },
+    { storyStep: 63, text: `It's a trap`, choices: [] },
+    {
+      storyStep: 64,
+      text: `The chest is rusted shut. But, after great effort, you are able
+    to bust it open. Inside, you find jewelry and some centuries old clothes.
+    You wonder if any of it is worth anything.`,
+      choices: [
+        {
+          text: `Get bearings`,
+          nextStep: 48,
+        },
+      ],
+    },
     { storyStep: 65, text: ``, choices: [] },
     { storyStep: 66, text: ``, choices: [] },
     { storyStep: 67, text: ``, choices: [] },
