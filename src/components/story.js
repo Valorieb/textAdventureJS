@@ -494,8 +494,8 @@ export const Story = () => {
     },
     {
       storyStep: 46,
-      text: `Squeezing through the crevace, you
-    come to a dark, wide opening. Stalactites and stalagmites protrude 
+      text: `You
+    come to a dark, wide opening in the cave. Stalactites and stalagmites protrude 
     like claws from the ground and the roof of the cave.
     There is a crude well to the east, beyond which the cave seems to narrow into 
     a small corridor. To the south, there is a steep slope upward.`,
@@ -533,13 +533,14 @@ export const Story = () => {
     As you make your way further down the corridor, you hear the sound of rushing water.
     After a few minutes of walking, the corridor opens to a vast chamber. Before you is
     an underground lake with a roaring waterfall pouring from somewhere far up above.
-    A path from where you stand curves around behind the waterfall.`,
+    A path curves around behind the waterfall.`,
       choices: [
         {
           text: `Swim in the lake`,
           nextStep: 55,
         },
         { text: "Follow the path behind the waterfall", nextStep: 56 },
+        { text: "Head west toward the room with the well", nextStep: 46 },
       ],
     },
     {
@@ -580,7 +581,8 @@ export const Story = () => {
     {
       storyStep: 52,
       text: `You've never seen a human skull before.
-    You stare gapemouthed at it for a while then give it a small kick.
+    You stare gapemouthed at it for a while. It stares back at you, emptily,
+    sending a shiver down your spine.
     Something glints from beneath the bones...`,
       choices: [
         { text: "Run awaaay!!!", nextStep: 47 },
@@ -615,7 +617,7 @@ export const Story = () => {
         },
         {
           text: "This lake isn't safe, get out while you still can!",
-          nextStep: 48,
+          nextStep: 66,
         },
       ],
     },
@@ -623,15 +625,15 @@ export const Story = () => {
     {
       storyStep: 56,
       text: `You follow a path that curves behind the waterfall.
-      As you approach the waterfall, you feel the spray of water mysting your skin. From here, 
+      As you approach the waterfall, you feel the spray of water mysting your skin, clothes, and hair.
+     From here, 
       you can reach out and touch the waterfall.
-       You feel the cool rush of water splashing through your fingers.
-       But that's not all you see.
-      To your surprise, the waterfall had concealed a hinged, metal door.`,
+       You feel the cool rush of water splashing through your fingers as you walk with arm outstretched.
+       As you near the end of the path, you are surprised to see that the waterfall had concealed a hinged, metal door.`,
       choices: [
         {
           text: `Turn back`,
-          nextStep: 47,
+          nextStep: 66,
         },
         {
           text: `Enter the metal doorway`,
@@ -665,7 +667,7 @@ export const Story = () => {
       choices: [
         {
           text: `Go back down toward the metal door`,
-          nextStep: 57,
+          nextStep: 65,
         },
         {
           text: `Approach the fire.`,
@@ -682,7 +684,7 @@ export const Story = () => {
     met with many such enthusiastic greetings.
 
     It's all coming back to you. You were hiking together as a group when
-    you saw a majestic red fox. You couldn't miss this photo opportunity. You followed
+    you saw a beautiful red fox. You couldn't miss this photo opportunity. You followed
     the fox from a distance, trying not to startle it.
 
     As you were rifling through your bag to find your camera, the fox bolted.
@@ -715,8 +717,8 @@ export const Story = () => {
     },
     {
       storyStep: 61,
-      text: `You swim away in a panic. Ain't nobody got time for that bad mojo!`,
-      choices: [],
+      text: `You swim away in a panic. Ain't nobody got time for that!`,
+      choices: [{ text: `Exit water.`, nextStep: 66 }],
     },
     {
       storyStep: 62,
@@ -734,7 +736,17 @@ export const Story = () => {
         },
       ],
     },
-    { storyStep: 63, text: `It's a trap`, choices: [] },
+    {
+      storyStep: 63,
+      text: `Terrified, you pick up the chest and hurl it back into the lake with all your might.
+    You're sure you did the right thing.`,
+      choices: [
+        {
+          text: `Continue`,
+          nextStep: 66,
+        },
+      ],
+    },
     {
       storyStep: 64,
       text: `The chest is rusted shut. But, after great effort, you are able
@@ -747,8 +759,35 @@ export const Story = () => {
         },
       ],
     },
-    { storyStep: 65, text: ``, choices: [] },
-    { storyStep: 66, text: ``, choices: [] },
+    {
+      storyStep: 65,
+      text: `You descend the path and arrive back at the rusted metal door. 
+      You hear the roar of the waterfall.`,
+      choices: [
+        {
+          text: `Go down toward the underground lake`,
+          nextStep: 54,
+        },
+        {
+          text: `Ascend the path from the metal door into the sunlight.`,
+          nextStep: 58,
+        },
+      ],
+    },
+    {
+      storyStep: 66,
+      text: `Before you is
+    an underground lake with a roaring waterfall pouring from somewhere far up above.
+    A path curves around behind the waterfall.`,
+      choices: [
+        {
+          text: `Swim in the lake`,
+          nextStep: 55,
+        },
+        { text: "Follow the path behind the waterfall", nextStep: 56 },
+        { text: "Head west toward the room with the well", nextStep: 46 },
+      ],
+    },
     { storyStep: 67, text: ``, choices: [] },
     { storyStep: 68, text: ``, choices: [] },
   ];
