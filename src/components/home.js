@@ -21,6 +21,7 @@ export const Home = () => {
           </Typography>
 
           <ButtonLink to="/Story">Play</ButtonLink>
+          <ButtonLink to="/CreateAccount">New Game</ButtonLink>
         </CardContent>
       </Card>
     </div>
