@@ -4,8 +4,10 @@ import {
   Button,
   Card,
   CardContent,
+  CardMedia,
   Dialog,
   Divider,
+  SimpleDialog,
   TextField,
   Typography,
 } from "@mui/material";
@@ -20,7 +22,7 @@ export const CreateAccount = () => {
   return (
     <div>
       <Card sx={{ minWidth: 275, maxWidth: 600, margin: "auto" }}>
-        <CardContent>
+        <CardContent sx={{ margin: "auto" }}>
           <Typography variant="h2" component="div" sx={{ textAlign: "center" }}>
             Lost in the Woods
           </Typography>
@@ -33,38 +35,61 @@ export const CreateAccount = () => {
             Create Account
           </Typography>
           <form>
-            <TextField
-              type="text"
-              label="username"
-              value={data.username}
-              onChange={(e) => setData({ ...data, username: e.target.value })}
-              sx={{ margin: "10px" }}
-            />
-            <br />
-            <TextField
-              type="password"
-              label="password"
-              value={data.password}
-              onChange={(e) => setData({ ...data, password: e.target.value })}
-              sx={{ margin: "10px" }}
-            />
-            <br />
-            <Card sx={{ height: "310px", width: "310px", margin: "10px" }}>
-              <img
-                alt="Default avatar"
-                src="./images/DefaultAvatar.png"
-                sx={{ height: "300px", width: "300px" }}
-              ></img>
-            </Card>
-            <br />
             <Box
-              component="section"
-              sx={{ p: 2, border: "1px dashed grey", textAlign: "center" }}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                height: "100%",
+              }}
             >
-              Select your character
+              <TextField
+                type="text"
+                label="username"
+                value={data.username}
+                onChange={(e) => setData({ ...data, username: e.target.value })}
+                sx={{ margin: "10px" }}
+              />
+
+              <TextField
+                type="password"
+                label="password"
+                value={data.password}
+                onChange={(e) => setData({ ...data, password: e.target.value })}
+                sx={{ margin: "10px" }}
+              />
+              <br />
             </Box>
+            <Divider sx={{ margin: "10px" }}></Divider>
+            <Card sx={{ height: "110px", width: "110px", margin: "auto" }}>
+              <CardMedia
+                component="img"
+                alt="Default avatar"
+                image="/images/DefaultAvatar.png"
+              />
+            </Card>
+
             <br />
-            <Button variant="contained" sx={{ margin: "10px" }}>
+
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                height: "100%",
+              }}
+            >
+              <Button variant="text" sx={{ margin: "auto" }}>
+                Select Character
+              </Button>
+            </Box>
+            {/* <SimpleDialog
+        selectedValue={selectedValue}
+        open={open}
+        onClose={handleClose}
+      /> */}
+
+            <br />
+            <Divider sx={{ margin: "10px" }}></Divider>
+            <Button variant="contained" sx={{ margin: "auto" }}>
               Create Account
             </Button>
           </form>
