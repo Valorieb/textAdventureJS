@@ -1,4 +1,7 @@
 import { useState } from "react";
+
+import PropTypes from "prop-types";
+
 import {
   Box,
   Button,
@@ -6,18 +9,70 @@ import {
   CardContent,
   CardMedia,
   Dialog,
+  DialogTitle,
   Divider,
-  SimpleDialog,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
   TextField,
   Typography,
 } from "@mui/material";
 
+const charTypes = ["guy", "girl", "default"];
+
+function SimpleDialog(props) {
+  const { onClose, selectedValue, open } = props;
+
+  const handleClose = () => {
+    onClose(selectedValue);
+  };
+
+  const handleListItemClick = (value) => {
+    onClose(value);
+  };
+
+  return (
+    <Dialog onClose={handleClose} open={open}>
+      <DialogTitle>Choose Avatar</DialogTitle>
+      <List sx={{ pt: 1 }}>
+        {charTypes.map((charType) => (
+          <ListItem disableGutters key={charType}>
+            <ListItemButton onClick={() => handleListItemClick(charType)}>
+              <ListItemText primary={charType} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+    </Dialog>
+  );
+}
+
+SimpleDialog.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+  selectedValue: PropTypes.string.isRequired,
+};
+
 export const CreateAccount = () => {
   const [data, setData] = useState({
     name: "",
-    email: "",
+    charType: "",
     password: "",
   });
+
+  //const characters = ["DefaultAvatar.png", "AvatarGuy.png", "AvatarGirl.png"];
+  const [open, setOpen] = useState(false);
+  const [selectedValue, setSelectedValue] = useState(charTypes[1]);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (value) => {
+    setOpen(false);
+    setSelectedValue(value);
+  };
 
   return (
     <div>
@@ -69,7 +124,21 @@ export const CreateAccount = () => {
             </Card>
 
             <br />
-
+            <div>
+              <Typography variant="subtitle1" component="div">
+                Selected: {selectedValue}
+              </Typography>
+              <br />
+              <Button variant="outlined" onClick={handleClickOpen}>
+                Select Character
+              </Button>
+              <SimpleDialog
+                selectedValue={selectedValue}
+                open={open}
+                onClose={handleClose}
+              />
+            </div>
+            {/* 
             <Box
               sx={{
                 display: "flex",
@@ -77,15 +146,14 @@ export const CreateAccount = () => {
                 height: "100%",
               }}
             >
-              <Button variant="text" sx={{ margin: "auto" }}>
+              <Button
+                variant="text"
+                sx={{ margin: "auto" }}
+                //onclick={handleOpenDialogue}
+              >
                 Select Character
               </Button>
-            </Box>
-            {/* <SimpleDialog
-        selectedValue={selectedValue}
-        open={open}
-        onClose={handleClose}
-      /> */}
+            </Box> */}
 
             <br />
             <Divider sx={{ margin: "10px" }}></Divider>
