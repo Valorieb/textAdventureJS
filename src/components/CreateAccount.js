@@ -11,39 +11,64 @@ import {
   Dialog,
   DialogTitle,
   Divider,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
+  ImageList,
+  ImageListItem,
   TextField,
   Typography,
 } from "@mui/material";
 
-const charTypes = ["guy", "girl", "default"];
+const imgTypes = [
+  "images/AvatarGirl.png",
+  "images/AvatarGuy.png",
+  "images/DefaultAvatar.png",
+];
 
 function SimpleDialog(props) {
-  const { onClose, selectedValue, open } = props;
+  const { onClose, selectedChar, open } = props;
 
   const handleClose = () => {
-    onClose(selectedValue);
+    onClose(selectedChar);
   };
 
-  const handleListItemClick = (value) => {
-    onClose(value);
+  const itemData = [
+    {
+      img: "images/AvatarGirl.png",
+      title: "Female avatar",
+      char: "Girl",
+    },
+    {
+      img: "images/AvatarGuy.png",
+      title: "Male avatar",
+      char: "Guy",
+    },
+    {
+      img: "images/DefaultAvatar.png",
+      title: "Default avatar",
+      char: "Default",
+    },
+  ];
+
+  const handleCharImgClick = (img) => {
+    onClose(img);
   };
 
   return (
     <Dialog onClose={handleClose} open={open}>
       <DialogTitle>Choose Avatar</DialogTitle>
-      <List sx={{ pt: 1 }}>
-        {charTypes.map((charType) => (
-          <ListItem disableGutters key={charType}>
-            <ListItemButton onClick={() => handleListItemClick(charType)}>
-              <ListItemText primary={charType} />
-            </ListItemButton>
-          </ListItem>
+
+      <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+        {itemData.map((item) => (
+          <ImageListItem key={item.img}>
+            <img
+              srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+              alt={item.title}
+              loading="lazy"
+              onClick={() => handleCharImgClick(item.img)}
+            />
+          </ImageListItem>
         ))}
-      </List>
+      </ImageList>
     </Dialog>
   );
 }
@@ -51,7 +76,7 @@ function SimpleDialog(props) {
 SimpleDialog.propTypes = {
   onClose: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
-  selectedValue: PropTypes.string.isRequired,
+  selectedChar: PropTypes.string.isRequired,
 };
 
 export const CreateAccount = () => {
@@ -61,17 +86,16 @@ export const CreateAccount = () => {
     password: "",
   });
 
-  //const characters = ["DefaultAvatar.png", "AvatarGuy.png", "AvatarGirl.png"];
   const [open, setOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(charTypes[1]);
+  const [selctedChar, setSelectedChar] = useState(imgTypes[2]);
 
   const handleClickOpen = () => {
     setOpen(true);
   };
 
-  const handleClose = (value) => {
+  const handleClose = (char) => {
     setOpen(false);
-    setSelectedValue(value);
+    setSelectedChar(char);
   };
 
   return (
@@ -119,41 +143,21 @@ export const CreateAccount = () => {
               <CardMedia
                 component="img"
                 alt="Default avatar"
-                image="/images/DefaultAvatar.png"
+                image={selctedChar}
               />
             </Card>
 
             <br />
             <div>
-              <Typography variant="subtitle1" component="div">
-                Selected: {selectedValue}
-              </Typography>
-              <br />
               <Button variant="outlined" onClick={handleClickOpen}>
                 Select Character
               </Button>
               <SimpleDialog
-                selectedValue={selectedValue}
+                selectedChar={selctedChar}
                 open={open}
                 onClose={handleClose}
               />
             </div>
-            {/* 
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                height: "100%",
-              }}
-            >
-              <Button
-                variant="text"
-                sx={{ margin: "auto" }}
-                //onclick={handleOpenDialogue}
-              >
-                Select Character
-              </Button>
-            </Box> */}
 
             <br />
             <Divider sx={{ margin: "10px" }}></Divider>
